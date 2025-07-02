@@ -15,7 +15,7 @@ class UserController {
         $data['categories'] = $categoryModel->getAllCategoriesWithProductCount();
         $data['products'] = $productModel->getAllProducts();
 
-    // Show different UI elements based on login status
+    
         $data['is_logged_in'] = isset($_SESSION['user_id']) && $_SESSION['role'] === 'user';
     
         include __DIR__ . '/../views/user/home.php';
