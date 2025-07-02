@@ -205,11 +205,11 @@ class UserController {
             $newQty = $currentQty - 1; // allow going to zero here
         } else {
 
-        // Manual input (no change parameter)
+        
             $newQty = $inputQty;
         }
 
-    // If quantity is zero or less, remove item and check if cart is empty
+    
         if ($newQty <= 0) {
 
             $cartModel->removeFromCart($_SESSION['user_id'], $product_id);
