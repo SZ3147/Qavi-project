@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /QaviEcommerce/
+
+# Redirect all requests to index.php if they don't match existing files/directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
