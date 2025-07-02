@@ -116,7 +116,7 @@ class UserController {
         $data['totalProducts'] = $totalProducts;
         $data['total_pages'] = ceil($totalProducts / $pageSize);
 
-    // Get all categories for sidebar
+    // Get all categories for sidebar and this is testing commit
         $data['categories'] = $categoryModel->getAllCategoriesWithProductCount();
 
         include __DIR__ . '/../views/user/category.php';
