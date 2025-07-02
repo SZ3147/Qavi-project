@@ -15,7 +15,7 @@ class UserController {
         $data['categories'] = $categoryModel->getAllCategoriesWithProductCount();
         $data['products'] = $productModel->getAllProducts();
 
-    // Show different UI elements based on login status
+    
         $data['is_logged_in'] = isset($_SESSION['user_id']) && $_SESSION['role'] === 'user';
     
         include __DIR__ . '/../views/user/home.php';
@@ -205,11 +205,11 @@ class UserController {
             $newQty = $currentQty - 1; // allow going to zero here
         } else {
 
-        // Manual input (no change parameter)
+        
             $newQty = $inputQty;
         }
 
-    // If quantity is zero or less, remove item and check if cart is empty
+    
         if ($newQty <= 0) {
 
             $cartModel->removeFromCart($_SESSION['user_id'], $product_id);
